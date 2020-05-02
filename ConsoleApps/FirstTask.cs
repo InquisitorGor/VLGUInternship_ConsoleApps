@@ -26,7 +26,7 @@ namespace ConsoleApps
                 Console.WriteLine("Цифры не равны");
             }
         }
-        private static bool AreSame(int number)
+        private static bool AreSame(int number) //
         {
             if (number % 111 == 0) return true;
             else return false;
