@@ -16,7 +16,7 @@ namespace ConsoleApps
                 double y1 = Convert.ToDouble(Console.ReadLine());
                 Console.Write("X2 ");
                 double x2 = Convert.ToDouble(Console.ReadLine());
-                Console.Write("X2 ");
+                Console.Write("Y2 ");
                 double y2 = Convert.ToDouble(Console.ReadLine());
                 Console.Write("X3 ");
                 double x3 = Convert.ToDouble(Console.ReadLine());
