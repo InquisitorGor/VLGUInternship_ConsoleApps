@@ -7,24 +7,38 @@ namespace ConsoleApps
         static void Main(string[] args)
         {
             Console.WriteLine("Первое задание");
-            double outerRadius, innerRadius;
-            Console.WriteLine("Введите внешний радуйс:");
-            outerRadius = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine("Введите внутренний радуйс:");
-            innerRadius = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine("Площадь кольца равна:" + CountRingSquare(outerRadius, innerRadius));
+            try
+            {
+                double outerRadius, innerRadius;
+                Console.WriteLine("Введите внешний радуйс:");
+                outerRadius = Convert.ToDouble(Console.ReadLine());
+                Console.WriteLine("Введите внутренний радуйс:");
+                innerRadius = Convert.ToDouble(Console.ReadLine());
+                Console.WriteLine("Площадь кольца равна:" + CountRingSquare(outerRadius, innerRadius));
+            }
+            catch (FormatException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
 
             Console.WriteLine("Второе задание");
             Console.WriteLine("Введите трехзначное число:");
-            int number = Convert.ToInt32(Console.ReadLine());
-            if (AreSame(number))
+            try
             {
-                Console.WriteLine("Все цифры равны");
+                int number = Convert.ToInt32(Console.ReadLine());
+                if (AreSame(number))
+                {
+                    Console.WriteLine("Все цифры равны");
+                }
+                else
+                {
+                    Console.WriteLine("Цифры не равны");
+                }
             }
-            else
+            catch (FormatException ex)
             {
-                Console.WriteLine("Цифры не равны");
-            }
+                Console.WriteLine(ex.Message);
+            }       
         }
         private static bool AreSame(int number) 
         {
