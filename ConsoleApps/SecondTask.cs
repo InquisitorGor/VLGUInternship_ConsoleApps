@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace ConsoleApps
 {
@@ -86,25 +84,53 @@ namespace ConsoleApps
             else if (age > 26 && age < 70) return "мужчина";
             else return "старик";
         }
-        private static void ShowNegativeEvenNumbers(int A, int B)
+        private static void ShowNegativeEvenNumbers(int A1, int B1)
         {
+            int A = A1;
+            int B = B1;
             while (A <= B && A < 0)
             {
                 if (A % 2 != 0) A++;
-                Console.WriteLine(A);
+                Console.Write(A);
                 A += 2;
+            }
+            A = A1;
+            B = B1;
+            Console.WriteLine();
+            do //do while не подходит для данной задачи
+            {
+                if (A > B && A > 0) break;
+                if (A % 2 != 0) A++;
+                Console.Write(A);
+                A += 2;
+            } while (A <= B && A < 0);
+            A = A1;
+            B = B1;
+            Console.WriteLine();
+            for (int i = A; i <= B; i+=2)
+            {
+                if (i >= 0) break;
+                if (i % 2 != 0) i++;
+                Console.Write(i);
+                
             }
         }
         private static void ShowIDKWhatItIs()
         {
             int top = 8;
-            for (int i = 1; i <= 8; i++)
-            {
-                Console.WriteLine(top);
+            for (int i = 1; i <= 4 ; i++)
+            {               
                 for (int j = 0; j < i; j++)
                 {
-                    Console.WriteLine(top--);
+                    Console.Write(top + " ");
                 }
+                top--;
+                Console.WriteLine();
+                for (int j = 0; j < i; j++)
+                {
+                    Console.Write(top + " ");
+                }
+                Console.WriteLine();
             }
         }
     }
