@@ -27,7 +27,7 @@ namespace ConsoleApps
             {
                 int age = Convert.ToInt32(Console.ReadLine());
                 if (age < 0) throw new Exception("Отрицательное число");
-                Console.WriteLine("Категория - " + checkAgeCategory(age));
+                Console.WriteLine("Категория - " + getAgeCategory(age));
             }
             catch (FormatException ex)
             {
@@ -59,7 +59,7 @@ namespace ConsoleApps
         }
         private static void CheckCoordinates(float x, float y)
         {
-            if (x == y && x * x + y * y < RADIUS * RADIUS)
+            if (x == y && x * x + y * y < RADIUS * RADIUS || x * x + y * y == RADIUS * RADIUS && y < x)
             {
                 Console.WriteLine("На границе");
 
@@ -74,14 +74,14 @@ namespace ConsoleApps
                 Console.WriteLine("Нет");
             }
         }
-        private static string checkAgeCategory(int year)
+        private static string getAgeCategory(int year)
         {
             int age = 2020 - year;
             if (age <= 1) return "младенец";
-            else if (age > 1 && age < 11) return "ребенок";
-            else if (age > 12 && age < 15) return "подросток";
-            else if (age > 16 && age < 25) return "юноша";
-            else if (age > 26 && age < 70) return "мужчина";
+            else if (age > 1 && age <= 11) return "ребенок";
+            else if (age > 11 && age <= 15) return "подросток";
+            else if (age > 15 && age <= 25) return "юноша";
+            else if (age > 25 && age <= 70) return "мужчина";
             else return "старик";
         }
         private static void ShowNegativeEvenNumbers(int A1, int B1)
@@ -97,7 +97,7 @@ namespace ConsoleApps
             A = A1;
             B = B1;
             Console.WriteLine();
-            do //do while не подходит для данной задачи
+            do //do while не очень подходит для данной задачи
             {
                 if (A > B && A > 0) break;
                 if (A % 2 != 0) A++;
