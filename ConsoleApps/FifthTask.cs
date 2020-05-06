@@ -1,7 +1,7 @@
 ﻿using System;
 namespace ConsoleApps
 {
-    class SixthTask
+    class FifthTask
     {
         static void Main(string[] args)
         {
